@@ -1,0 +1,37 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+<div class="detail-box">
+	<div class="detail-overflow">
+		<img src={{poster}}>
+		<div class="detail-info">
+			<p>Ttle: {{title}}</p>
+			<p>Drector: {{director}}</p>
+			<p>Year: {{year}}</p>
+			<p>Rating: {{imdbRating}}</p>
+			<p>Actors: {{actors}}</p>
+			<p>Plot: {{plot}}</p>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top" disabled>
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left" disabled>
+		<input type="submit" value="Right" name="button_right" disabled>
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom" disabled>
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select" disabled>
+	<input type="submit" value="Start" name="button_start" disabled>
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b">
+	<input type="submit" value="A" name="button_a" disabled>
+</div>
+{% endblock %}

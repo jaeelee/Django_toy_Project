@@ -1,0 +1,42 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+<div class="moviedex-box">
+	<div class="moviedex-overflow">
+		<table class="moviedex-table">
+		{% for m in m_poster %}
+			<tr class="moviedex-tr">
+			{% if m == selected %}
+			<td class="moviedex-td" id="movie-highligt"><img src={{ m }}></td>
+			{% else %}
+			<td class="moviedex-td"><img src={{ m }}></td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+	<h2 class='title-moviedex'>A - More Information</h2>
+	<h2 class='title-moviedex'>Select - Back</h2>
+</div>
+{% endblock %}
+
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top">
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left">
+		<input type="submit" value="Right" name="button_right">
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom">
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select">
+	<input type="submit" value="Start" name="button_start" disabled>
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b" disabled>
+	<input type="submit" value="A" name="button_a">
+</div>
+{% endblock %}

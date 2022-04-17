@@ -1,0 +1,28 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+<h1 class='title-main'>MOVIEMONS</h1>
+<h2 class='title-main'>A : Game Start</h2>
+<h2 class='title-main'>B : Load</h2>
+{% endblock %}
+
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top" disabled>
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left" disabled>
+		<input type="submit" value="Right" name="button_right" disabled>
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom" disabled>
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select" disabled>
+	<input type="submit" value="Start" name="button_start" disabled>
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b">
+	<input type="submit" value="A" name="button_a">
+</div>
+{% endblock %}

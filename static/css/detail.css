@@ -1,0 +1,11 @@
+img {
+	width: 50%;
+}
+
+.detail-box {
+	height: 550px;
+}
+
+.detail-overflow {
+	overflow: auto;
+}

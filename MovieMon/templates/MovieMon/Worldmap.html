@@ -1,0 +1,61 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+
+<p id="world-movieball">{{movieball}} movieball(s)</p>
+
+<table class="world-table">
+{% for col in map_col %}
+	<tr class="world-tr">
+	{% for row in map_row %}
+		{% if player_col == col and player_row == row %}
+		<td class="world-td" id="world-player">*</td>
+		{% else %}
+		<td class="world-td" id="wolrd-empty"></td>
+		{% endif %}
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
+
+{% block message %}
+	{% if message %}
+	<p>
+		{% if message == 'movieball' %}
+		I got the movieball.
+		{% elif message == 'moviemon' %}
+		i met a moviemon. Press A to battle moviemon.
+		{% else %}
+		<br>
+		{% endif %}
+	</p>
+	{% endif %}
+
+{% endblock %}
+
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top">
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left">
+		<input type="submit" value="Right" name="button_right">
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom">
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select">
+	<input type="submit" value="Start" name="button_start">
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b" disabled>
+	{% if message == 'moviemon' %}
+	<input type="submit" value="A" name="button_a">
+	{% else %}
+	<input type="submit" value="A" name="button_a" disabled>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+<p id="battle-movieball">{{movieball}} movieball(s)</p>
+<img src={{m_poster}}>
+<p>player_strength: {{player_strength}}</p>
+<p>winning_rate: {{winning_rate}}</p>
+{% endblock %}
+
+
+{% block message %}
+	{% if message == 'success_catch' %}
+	<p>
+		I got the "{{ moviemon_data.Title }}"!<br>
+		B - Return to Worldmap
+	</p>
+	{% elif message == 'out' %}
+	<p>
+		it's out of the movieball!<br>
+		A - Launch Movieball<br>
+		B - Return to Worldmap
+	</p>
+	{% elif message == 'fail_catch' %}
+	<p>
+		FAIL!!<br>
+		A - Launch Movieball<br>
+		B - Return to Worldmap
+	</p>
+	{% else %}
+	<p>
+		A - Launch Movieball<br>
+		B - Return to Worldmap
+	</p>
+	{% endif %}
+{% endblock %}
+
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top" disabled>
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left" disabled>
+		<input type="submit" value="Right" name="button_right" disabled>
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom" disabled>
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select" disabled>
+	<input type="submit" value="Start" name="button_start" disabled>
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b">
+	{% if movieball == 0 or message == 'success_catch' %}
+	<input type="submit" value="A" name="button_a" disabled>
+	{% else %}
+	<input type="submit" value="A" name="button_a">
+	{% endif %}
+</div>
+{% endblock %}

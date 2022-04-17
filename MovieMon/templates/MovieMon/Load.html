@@ -1,0 +1,60 @@
+{% extends "MovieMon/base.html" %}
+
+{% block content %}
+<h1 class='title-load'>LOAD</h1>
+
+{% if selected == 0 %}
+<h2 class='title-load' id='load-highlite'>{{slotA}}</h2>
+{% else %}
+<h2 class='title-load'>{{slotA}}</h2>
+{% endif %}
+
+{% if selected == 1 %}
+<h2 class='title-load' id='load-highlite'>{{slotB}}</h2>
+{% else %}
+<h2 class='title-load'>{{slotB}}</h2>
+{% endif %}
+
+{% if selected == 2 %}
+<h2 class='title-load' id='load-highlite'>{{slotC}}</h2>
+{% else %}
+<h2 class='title-load'>{{slotC}}</h2>
+{% endif %}
+
+{% if message == 'game_is_loaded' %}
+<h2 class='title-load'>A : Start Game, B : Cancel</h2>
+{% else %}
+<h2 class='title-load'>A : Save, B : Cancel</h2>
+{% endif %}
+{% endblock %}
+
+
+
+{% block message %}
+	{% if message == 'game_is_loaded' %}
+	<p>
+		Game is Loaded!!<br>
+	</p>
+	{% endif %}
+{% endblock %}
+
+
+
+{% block control %}
+<div class="direction">
+	<input type="submit" value="Top" name="button_top">
+	<div class="direction-side">
+		<input type="submit" value="Left" name="button_left" disabled>
+		<input type="submit" value="Right" name="button_right" disabled>
+	</div>
+	<input type="submit" value="Bottom" name="button_bottom">
+</div>
+<div class="option">
+	<input type="submit" value="Select" name="button_select" disabled>
+	<input type="submit" value="Start" name="button_start" disabled>
+</div>
+<div class="action">
+	<input type="submit" value="B" name="button_b">
+	<input type="submit" value="A" name="button_a">
+</div>
+{% endblock %}

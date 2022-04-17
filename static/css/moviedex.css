@@ -1,0 +1,30 @@
+.moviedex-table .moviedex-tr .moviedex-td {
+	border-collapse: collapse;
+	margin: 0;
+}
+
+.moviedex-table {
+	height: 100%;
+	width: 100%;
+}
+
+.moviedex-td{
+	border: 1px solid black;
+}
+
+#movie-highligt {
+	background-color: red;
+}
+
+.moviedex-box {
+	height: 550px;
+}
+
+.moviedex-overflow {
+	overflow: auto;
+	height: 80%;
+}
+
+img {
+	width: 50%;
+}
